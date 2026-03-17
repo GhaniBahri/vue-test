@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { LayoutDashboard, Users, Settings, LogOut, X } from 'lucide-vue-next';
+import { LayoutDashboard, Users, LogOut, X } from 'lucide-vue-next';
 
 defineProps({
   isOpen: Boolean,

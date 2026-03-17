@@ -2,7 +2,7 @@
 import { onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import { storeToRefs } from 'pinia';
-import { Mail, MapPin, Phone, CircleDollarSign, Briefcase, ArrowRight } from 'lucide-vue-next';
+import { Mail, MapPin, CircleDollarSign, Briefcase, ArrowRight } from 'lucide-vue-next';
 
 import { useCandidateStore } from '../../store/candidate';
 defineProps({
@@ -13,7 +13,6 @@ defineProps({
   },
 });
 const candidateStore = useCandidateStore();
-const { statuses } = storeToRefs(candidateStore);
 
 onMounted(async () => {
   await Promise.all([candidateStore.fetchStatuses()]);

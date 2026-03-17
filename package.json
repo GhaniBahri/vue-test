@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "api": "json-server --watch db.json --port 3000",
-    "lint": "eslint . --ext .js,*.vue --fix",
+    "lint": "eslint . --fix",
     "format": "prettier --write \"src/**/*.{js,vue,css}\"",
     "format:check": "prettier --check \"src/**/*.{js,vue,css}\"",
     "start": "concurrently \"npm run api\" \"npm run dev\""
@@ -23,8 +23,10 @@
     "vue-router": "^5.0.3"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.2.1",
     "@vitejs/plugin-vue": "^6.0.5",
+    "@vue/eslint-config-prettier": "^10.2.0",
     "eslint": "^10.0.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",

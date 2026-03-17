@@ -9,14 +9,14 @@ export default [
   },
   {
     name: 'app/files-to-ignore',
-    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
+    ignores: ['**/dist/**', '**/node_modules/**', '**/coverage/**'],
   },
   js.configs.recommended,
-  ...pluginVue.configs['flat/essential'], // Ou 'flat/recommended' pour plus de rigueur
+  ...pluginVue.configs['flat/essential'],
   skipFormatting,
   {
     rules: {
-      'vue/multi-word-component-names': 'off', // Pratique pour les petits projets
+      'vue/multi-word-component-names': 'off',
       'no-unused-vars': 'warn',
     }
   }
