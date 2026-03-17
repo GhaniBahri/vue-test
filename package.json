@@ -10,12 +10,17 @@
     "api": "json-server --watch db.json --port 3000",
     "lint": "eslint . --ext .js,*.vue --fix",
     "format": "prettier --write \"src/**/*.{js,vue,css}\"",
-    "format:check": "prettier --check \"src/**/*.{js,vue,css}\""
+    "format:check": "prettier --check \"src/**/*.{js,vue,css}\"",
+    "start": "concurrently \"npm run api\" \"npm run dev\""
   },
   "dependencies": {
+    "axios": "^1.13.6",
     "datatables.net-dt": "^2.3.7",
     "datatables.net-vue3": "^3.0.4",
-    "vue": "^3.5.30"
+    "lucide-vue-next": "^0.577.0",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.30",
+    "vue-router": "^5.0.3"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.1",
@@ -24,6 +29,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-vue": "^10.8.0",
+    "json-server": "^1.0.0-beta.13",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.2.1",
     "vite": "^7.3.1"
