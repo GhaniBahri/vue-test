@@ -15,10 +15,10 @@ const toggleSidebar = () => {
 
 const pageTitle = computed(() => {
   const titles = {
-    'dashboard': 'Tableau de bord',
-    'candidates': 'Liste des Candidats',
-    'candidateDetail': 'Détail du Candidat',
-    'notFound': 'Erreur 404'
+    dashboard: 'Tableau de bord',
+    candidates: 'Liste des Candidats',
+    candidateDetail: 'Détail du Candidat',
+    notFound: 'Erreur 404',
   };
   return titles[route.name] || route.meta.title || 'Application';
 });
@@ -35,7 +35,10 @@ const toggleTheme = () => {
 };
 
 onMounted(() => {
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
     isDark.value = true;
     document.documentElement.classList.add('dark');
   } else {
@@ -60,20 +63,28 @@ onMounted(() => {
           >
             <Menu :size="24" />
           </button>
-          
+
           <h1 class="text-sm hidden sm:block text-text-main font-semibold transition-all">
-          {{ pageTitle }}
+            {{ pageTitle }}
           </h1>
         </div>
 
         <div class="flex items-center gap-2">
-          <button 
-            @click="toggleTheme" 
+          <button
+            @click="toggleTheme"
             class="p-2.5 rounded-xl bg-bg-main border border-border-light text-text-main hover:border-primary/50 transition-all shadow-sm group"
             aria-label="Toggle dark mode"
           >
-            <Sun v-if="isDark" :size="20" class="text-amber-400 group-hover:rotate-45 transition-transform" />
-            <Moon v-else :size="20" class="text-slate-600 group-hover:-rotate-12 transition-transform" />
+            <Sun
+              v-if="isDark"
+              :size="20"
+              class="text-amber-400 group-hover:rotate-45 transition-transform"
+            />
+            <Moon
+              v-else
+              :size="20"
+              class="text-slate-600 group-hover:-rotate-12 transition-transform"
+            />
           </button>
         </div>
       </header>

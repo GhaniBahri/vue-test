@@ -22,17 +22,18 @@ export const useCandidateStore = defineStore('candidate', {
       let result = state.candidates;
       if (state.filters.search) {
         const s = state.filters.search.toLowerCase();
-        result = result.filter(c => 
-          c.nom.toLowerCase().includes(s) || 
-          c.email.toLowerCase().includes(s) ||
-          c.poste.toLowerCase().includes(s)
+        result = result.filter(
+          (c) =>
+            c.nom.toLowerCase().includes(s) ||
+            c.email.toLowerCase().includes(s) ||
+            c.poste.toLowerCase().includes(s)
         );
       }
       if (state.filters.statusId) {
-        result = result.filter(c => c.statut === state.filters.statusId);
+        result = result.filter((c) => c.statut === state.filters.statusId);
       }
       if (state.filters.maxSalary && state.filters.maxSalary > 0) {
-        result = result.filter(c => Number(c.salaireSouhaite) <= state.filters.maxSalary);
+        result = result.filter((c) => Number(c.salaireSouhaite) <= state.filters.maxSalary);
       }
       return result;
     },
@@ -50,14 +51,14 @@ export const useCandidateStore = defineStore('candidate', {
     totalCount: (state) => state.candidates.length,
 
     countByStatus: (state) => (statusName) => {
-      return state.candidates.filter(c => c.statut === statusName).length;
+      return state.candidates.filter((c) => c.statut === statusName).length;
     },
 
     hiringRate: (state) => {
       if (state.candidates.length === 0) return 0;
-      const hired = state.candidates.filter(c => c.statut === 'Accepté').length;
+      const hired = state.candidates.filter((c) => c.statut === 'Accepté').length;
       return Math.round((hired / state.candidates.length) * 100);
-    }
+    },
   },
 
   actions: {
@@ -101,7 +102,7 @@ export const useCandidateStore = defineStore('candidate', {
         if (this.currentCandidate && this.currentCandidate.id === candidateId) {
           this.currentCandidate.statut = newStatusName;
         }
-        const index = this.candidates.findIndex(c => c.id === candidateId);
+        const index = this.candidates.findIndex((c) => c.id === candidateId);
         if (index !== -1) this.candidates[index].statut = newStatusName;
       } catch (err) {
         console.error('Erreur update status', err);

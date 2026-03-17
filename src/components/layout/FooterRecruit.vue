@@ -2,7 +2,6 @@
 import { Heart } from 'lucide-vue-next';
 
 const currentYear = new Date().getFullYear();
-
 </script>
 
 <template>
@@ -14,7 +13,12 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div class="flex items-center gap-1 text-sm text-gray-400">
-        Développé par <span class="font-medium text-gray-600"><a href="https://github.com/abdelghani-bahri" target="_blank" rel="noopener noreferrer">Abdelghani Bahri</a></span>
+        Développé par
+        <span class="font-medium text-gray-600"
+          ><a href="https://github.com/abdelghani-bahri" target="_blank" rel="noopener noreferrer"
+            >Abdelghani Bahri</a
+          ></span
+        >
         <Heart :size="14" class="text-red-400 fill-current" />
       </div>
 

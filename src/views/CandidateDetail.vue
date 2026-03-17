@@ -14,7 +14,7 @@ import {
   Send,
   MessageSquare,
   User,
-  CircleDollarSign
+  CircleDollarSign,
 } from 'lucide-vue-next';
 import { useCandidateStore } from '../store/candidate';
 
@@ -35,11 +35,11 @@ const currentStatus = computed(() => {
   return (
     statuses.value.find((s) => String(s.id) === String(currentCandidate.value.statut_id)) ||
     statuses.value.find((s) => s.nom === currentCandidate.value.statut)
-  ); 
+  );
 });
 
 const handleStatusChange = async (event) => {
-  const newStatusName = event.target.value; 
+  const newStatusName = event.target.value;
 
   if (!newStatusName || newStatusName === currentCandidate.value.statut) return;
 
@@ -200,9 +200,7 @@ const formatDate = (dateStr) => {
             </section>
           </div>
 
-          <section
-            class="bg-surface p-8 rounded-lg border border-border-light shadow-sm space-y-6"
-          >
+          <section class="bg-surface p-8 rounded-lg border border-border-light shadow-sm space-y-6">
             <h3 class="text-xl font-bold text-text-main flex items-center gap-3">
               <MessageSquare :size="24" class="text-primary" />
               Commentaires & Notes Internes
