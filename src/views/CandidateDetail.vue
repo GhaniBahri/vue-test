@@ -64,6 +64,7 @@ const submitComment = async () => {
     await store.addComment(currentCandidate.value.id, newComment.value);
     newComment.value = '';
   } catch (err) {
+    console.error(err);
     alert("Erreur lors de l'envoi");
   } finally {
     isSubmitting.value = false;

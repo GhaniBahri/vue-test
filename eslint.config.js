@@ -1,11 +1,18 @@
 import js from '@eslint/js';
 import pluginVue from 'eslint-plugin-vue';
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting';
+import globals from 'globals';
 
 export default [
   {
     name: 'app/files-to-lint',
     files: ['**/*.{js,mjs,jsx,vue}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
   },
   {
     name: 'app/files-to-ignore',
@@ -18,6 +25,8 @@ export default [
     rules: {
       'vue/multi-word-component-names': 'off',
       'no-unused-vars': 'warn',
+      'no-console': 'off', 
+      'no-undef': 'error',
     }
   }
 ];

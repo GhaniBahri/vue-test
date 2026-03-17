@@ -69,6 +69,7 @@ export const useCandidateStore = defineStore('candidate', {
         this.candidates = response.data || [];
       } catch (err) {
         this.error = 'Erreur lors du chargement des candidats';
+        console.error(err);
       } finally {
         this.loading = false;
       }
@@ -82,6 +83,7 @@ export const useCandidateStore = defineStore('candidate', {
         this.currentCandidate = response.data;
       } catch (err) {
         this.error = 'Candidat introuvable.';
+        console.error(err);
       } finally {
         this.loading = false;
       }

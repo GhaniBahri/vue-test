@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
-import { storeToRefs } from 'pinia';
 import { Mail, MapPin, CircleDollarSign, Briefcase, ArrowRight } from 'lucide-vue-next';
 
 import { useCandidateStore } from '../../store/candidate';
